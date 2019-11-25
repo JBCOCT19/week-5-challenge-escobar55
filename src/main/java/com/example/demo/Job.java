@@ -19,10 +19,6 @@ public class Job {
     private String title;
 
     @NotNull
-    @Size(min = 3)
-    private String employer;
-
-    @NotNull
     @Size(min = 10)
     private String description;
 
@@ -52,14 +48,6 @@ public class Job {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(String employer) {
-        this.employer = employer;
     }
 
     public String getDescription() {
