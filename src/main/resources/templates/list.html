@@ -10,18 +10,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="background-color: lightskyblue">
 <div class="container" >
     <div class="jumbotron">
-<h1>All Jobs</h1>
+ <h1 style="text-align: center">Welcome to Craigslistjobs</h1>
+<h3>All Jobs</h3>
 <a href="/add">Add a Job</a><br/>
-<div th:each="job : ${jobs}">
+<div th:each="job : ${jobs}" style="background-color: lightblue">
     <hr />
-    <h4 th:inline="text"> [[${job.title}]]</h4>
-    Description: <p th:text="${job.description}"></p>
-    Author: <p th:text="${job.author}"></p>
-    Phone: <p th:text="${job.phone}"></p>
-    Date posted: <p th:text="${job.postedDate}"></p>
+    <h4 th:inline="text"> <b>Job title: </b> [[${job.title}]]</h4>
+    <b>Description: </b> <p th:text="${job.description}"></p>
+    <b>Author: </b> <p th:text="${job.author}"></p>
+    <b>Phone: </b><p th:text="${job.phone}"></p>
+    <b>Date posted: </b> <p th:text="${job.postedDate}"></p>
+
+    <a th:href="@{/update/{id}(id=${job.id})}"> Edit this job </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/delete/{id}(id=${job.id})}"> Delete this job </a>
     <hr />
 </div>
 
